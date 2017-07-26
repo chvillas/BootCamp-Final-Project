@@ -1,0 +1,29 @@
+<div *ngIf="student">
+  <img [src]="student.photo" [alt]="student.name">
+  <h2>{{student.name}} details!</h2>
+  <div>
+    <label>id: </label>{{student.id}}
+  </div>
+  <div>
+    <label>Full Name: </label>
+    <input [(ngModel)]="student.name" placeholder="Full Name" />
+  </div>
+  <div>
+    <label>Average Grade: </label>
+    <input [(ngModel)]="student.averageGrade" placeholder="Average Grade" type="number"/>
+  </div>
+  <div>
+    <label># of Delivered Homeworks: </label>
+    <input [(ngModel)]="student.deliveredHomeworks" placeholder="Delivered Homework" type="number"/>
+  </div>
+  <div>
+    <label># of Missing Homeworks: </label>
+    <input [(ngModel)]="student.missingHomeworks" placeholder="Missing Homeworks" type="number"/>
+  </div>
+  <!-- <div>
+    <label>Updated: </label>
+    <input [(ngModel)]="student.updated" placeholder="Updated" value="Date.now()"/>
+  </div> -->
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

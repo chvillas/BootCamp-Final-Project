@@ -1,0 +1,49 @@
+<h2>Students</h2>
+<div>
+  <label>Student name:</label> <input #studentName />
+  <button (click)="add(studentName.value); studentName.value=''">
+    Add
+  </button>
+</div>
+<button (click)="toggleView()" > {{ (view)  ? 'Compact View' : 'Full View' }} </button>
+<table class="students" mdSort (mdSortChange)="sortData($event)">
+  <tr>
+    <th md-sort-header="id" >ID</th>
+    <th md-sort-header="photo">Photo</th>
+    <th md-sort-header="name">Full Name</th>
+    <th md-sort-header="averageGrade">Average Grade</th>
+    <th md-sort-header="deliveredHomeworks" *ngIf=(view)># of Delivered Homeworks</th>
+    <th md-sort-header="missingHomeworks" *ngIf=(view)># of Missing Homeworks</th>
+    <th md-sort-header="updated" *ngIf=(view)>updated</th>
+    <th>Delete</th>
+  </tr>
+
+  <!-- <tr *ngFor="let dessert of sortedData"> -->
+  <tr *ngFor="let student of students" (click)="onSelect(student)" [class.selected]="student === selectedStudent">
+    <td>{{student.id}}</td>
+    <td><img [src]="student.photo" [alt]="student.name"></td>
+    <td>{{student.name}}</td>
+    <td>{{student.averageGrade}}</td>
+    <td *ngIf=(view)>{{student.deliveredHomeworks}}</td>
+    <td *ngIf=(view)>{{student.missingHomeworks}}</td>
+    <td *ngIf=(view)>{{student.updated | date}}</td>
+    <td><button class="delete" (click)="delete(student); $event.stopPropagation()">x</button></td>
+  </tr>
+</table>
+
+<div *ngIf="selectedStudent">
+  <h2>
+    {{selectedStudent.name | uppercase}} is my student
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+
+<!-- <ul class="students">
+  <li *ngFor="let student of students" (click)="onSelect(student)" [class.selected]="student === selectedStudent">
+    <span class="badge">{{student.id}}</span>
+    <img [src]="student.photo" [alt]="student.name">
+    <span>{{student.name}}</span>
+    <button class="delete" (click)="delete(student); $event.stopPropagation()">x</button>
+  </li>
+</ul> -->
