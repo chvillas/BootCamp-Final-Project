@@ -4,7 +4,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const students = [
       {
         id: 0,
-        photo: "../assets/img/aquaman.png",
+        photo: "./assets/img/aquaman.png",
         name: 'Zero',
         averageGrade: 5,
         deliveredHomeworks: 6,
@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 11,
-        photo: "../assets/img/batman.png",
+        photo: "./assets/img/batman.png",
         name: 'Mr. Nice',
         averageGrade: 4.5,
         deliveredHomeworks: 6,
@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 12,
-        photo: "../assets/img/daredevil.png",
+        photo: "./assets/img/daredevil.png",
         name: 'Narco',
         averageGrade: 3,
         deliveredHomeworks: 3,
@@ -31,7 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 13,
-        photo: "../assets/img/hulk.png",
+        photo: "./assets/img/hulk.png",
         name: 'Bombasto',
         averageGrade: 0.1,
         deliveredHomeworks: 0,
@@ -40,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 14,
-        photo: "../assets/img/linterna-verde.png",
+        photo: "./assets/img/linterna-verde.png",
         name: 'Celeritas',
         averageGrade: 2.8,
         deliveredHomeworks: 2,
@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 15,
-        photo: "../assets/img/spiderman.png",
+        photo: "./assets/img/spiderman.png",
         name: 'Magneta',
         averageGrade: 2.5,
         deliveredHomeworks: 2,
@@ -58,7 +58,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 16,
-        photo: "../assets/img/wolverine.png",
+        photo: "./assets/img/wolverine.png",
         name: 'RubberMan',
         averageGrade: 0,
         deliveredHomeworks: 0,
